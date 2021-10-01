@@ -1,23 +1,31 @@
 function smarativeBadge() {
-	let div = document.createElement("div");
+  let divContainer = document.createElement("div");
 
-	let style = document.createElement("style");
+  //   function setAttributes(el, options) {
+  //     Object.keys(options).forEach(function (attr) {
+  //       el.setAttribute(attr, options[attr]);
+  //     });
+  //   }
 
-	style.innerHTML =
-		".s-container {" +
-		"color: purple;" +
-		"background-color: #e5e5e5;" +
-		"padding: 16px;" +
-		"display: inline-block" +
-		"}";
-	// Get the first script tag
-	var ref = document.querySelector("script");
+  //   setAttributes(div, {
+  //     src: "https://cdnjs.buymeacoffee.com/1.0.0/button.prod.min.js",
+  //     "data-name": "bmc-button",
+  //     "data-slug": "smarative",
+  //     "data-color": "#FFDD00",
+  //     "data-font": "Arial",
+  //     "data-text": "Buy me a coffee",
+  //     "data-outline-color": "#000000",
+  //     "data-font-color": "#000000",
+  //     "data-coffee-color": "#ffffff",
+  //   });
 
-	// Insert our new styles before the first script tag
-	ref.parentNode.insertBefore(style, ref);
-
-	div.classList.add("s-container");
-	div.innerHTML = "<span>CreateElement example</span>";
-	document.body.appendChild(div);
+  divContainer.classList.add("s-container");
+  divContainer.setAttribute(
+    "style",
+    "position: absolute; bottom: 16px; right: 16px;"
+  );
+  divContainer.innerHTML = "<a href='https://www.buymeacoffee.com/smarative' target='_blank'><img src='https://cdn.buymeacoffee.com/buttons/v2/arial-yellow.png' alt='Buy Me A Coffee' style='height: 100% !important;width: 10vw !important;' ></a>";
+  document.body.appendChild(divContainer);
+  
 }
-smarativeBadge();
+document.body.onload = smarativeBadge;
